@@ -23,7 +23,7 @@ def mavenHome = tool name: "maven3.6.3"
   {
   sshagent(['TomcatserverCredentials'])
   {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.198.179:/opt/apache-tomcat-9.0.38/webapps/"
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.154.156:/opt/apache-tomcat-9.0.38/webapps/"
   }
   }
   stage('EmailNotification')
