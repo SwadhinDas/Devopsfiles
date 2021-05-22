@@ -9,6 +9,7 @@ stage('CreateBuild')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
+/*
 stage('Sonarqubereport')
 {
 sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -24,6 +25,7 @@ sshagent(['TomcatserverCredentialsforpipeline'])
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.164.181:/opt/apache-tomcat-9.0.45/webapps/"
 }
 }
+*/
 stage('EmailNotification')
 {
 mail bcc: '', body: 'Build is Over...', cc: '', from: '', replyTo: '', subject: 'BUILD STATUS', to: 'swadhindas100@gmail.com'
